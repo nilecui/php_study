@@ -5,7 +5,7 @@
 		public $dbname="empmanager";
 		var $username="root";
 		var $password="cwtnqwjx";
-		public $host="localhost";
+		public $host="192.168.1.100";
 	
 		//写个构造函数
 		public function __construct(){

@@ -1,10 +1,25 @@
 <?php
 require_once 'AdminService.class.php';
+
 //接收用户数据
-//1.用户id	
+//1.用户id
 $id = $_POST ['id'];
+
 //2.密码password
 $password = $_POST ['password'];
+
+
+$code=$_POST['code'];
+
+
+//验证验证码
+session_start();
+if ($code!=$_SESSION['code'])
+{
+    header("Location:login.php?error=2");
+    exit();
+}
+
 //3.获取用户是否选中保存id
 if(empty($_POST['keep'])){
 	//echo "用户不保存!";
@@ -19,6 +34,8 @@ else
 	setcookie("id",$id,time()+7*2*24*3600);
 }
 
+
+
 //实例化一个adminService的方法
 $adminService = new AdminService ();
 $name=$adminService->checkAdmin ( $id, $password );
@@ -29,7 +46,7 @@ if ($name!="") {
 	//数据库：做一个登录表，把登录人的IP地址记录下来；不好
 
 	//合法
-    session_start();
+//    session_start();
     $_SESSION['loginuser']=$name;
 
     //有了session不需要传递了

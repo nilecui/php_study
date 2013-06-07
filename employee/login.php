@@ -20,7 +20,7 @@ border=0>
             width=468></TD></TR></TABLE>
       <TABLE cellSpacing=0 cellPadding=0 width=468 bgColor=#ffffff border=0>
         <TR>
-          <TD width=16><IMG height=122 src="images/login_3.jpg" 
+          <TD width=16><IMG height=179 src="images/login_3.jpg" 
             width=16></TD>
           <TD align=middle>
             <TABLE cellSpacing=0 cellPadding=0 width=230 border=0>
@@ -42,6 +42,16 @@ border=0>
                   style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid" 
                   type=password maxLength=30 size=24 value="" 
                 name="password"></TD></TR>
+              <TR height=36>
+                  <TD>&nbsp; </TD>
+                  <TD>验&nbsp;证&nbsp;码</TD>
+                  <TD><INPUT
+                          style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid"
+                          maxLength=15 size=24 value=""
+                          name="code">
+                  </TD>
+                  <TD>&nbsp;<img src="checkCode.php" onclick="this.src='checkCode.php?aa='+Math.random()"/></TD>
+              </TR>
               <TR height=5>
               	<TD>&nbsp; </TD>
                 <TD colSpan=2><input type="checkbox" name="keep" value="yes"></input><font>保存登录ID</font></TD></TR>
@@ -60,6 +70,10 @@ border=0>
 							if($err==1){
 								echo "<br><font color='red' size='3'>你的用户名或密码错误!</font>";
 							}
+                            else if($err==2)
+                            {
+                                echo "<br><font color='red' size='3'>验证码错误!</font>";
+                            }
 						//}
 					}
 				?>
@@ -67,7 +81,7 @@ border=0>
                </FORM>
                </TABLE>
              </TD>
-          <TD width=16><IMG height=122 src="images/login_4.jpg" 
+          <TD width=16><IMG height=179 src="images/login_4.jpg" 
             width=16></TD></TR></TABLE>
       <TABLE cellSpacing=0 cellPadding=0 width=468 border=0>
         <TR>
