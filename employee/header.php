@@ -20,8 +20,9 @@ background="images/header_bg.jpg" border=0>
       <A style="COLOR: #fff" 
       href="" 
       target=main>修改口令</A> &nbsp;&nbsp; 
-      <?php 
-		echo "<A style='COLOR: #fff' onclick='if (confirm('确定要退出吗？')) return true; else return false;' href='login.php' target=_top>退出系统</A> ";
+      <?php
+        $name=$_GET['name'];
+		echo "<A style='COLOR: #fff' onclick='if (confirm('确定要退出吗？')) return true; else return false;' href='login.php?name=$name' target=_top>退出系统</A> ";
 	  ?>
     </TD>
     <TD align=right width=268><IMG height=56 

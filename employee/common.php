@@ -36,4 +36,9 @@
             header("Location:login.php?error=1");
         }
     }
+
+    function destorySession(){
+        session_start();
+        session_destroy();
+    }
 ?>

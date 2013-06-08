@@ -57,6 +57,7 @@ $imstr[3]["x"] = $imstr[2]["x"] + $font_size - 1 + rand(0, 1);
 $imstr[3]["y"] = rand(1, 3);
 
 //写入随机字串
+$sess_str='';
 for ($i = 0; $i < 4; $i++) {
 //获取随机较深颜色
     $text_color = imagecolorallocate($im, rand(50, 180), rand(50, 180), rand(50, 180));

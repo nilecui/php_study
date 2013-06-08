@@ -63,19 +63,22 @@ border=0>
                 <?php 
 					//接收error
 					if(isset($_GET["error"])){
-						//if (empty($_GET['error'])){
-							//接收错误编号
-							//@$error=$_GET['error'];
 							$err=$_GET['error'];
 							if($err==1){
-								echo "<br><font color='red' size='3'>你的用户名或密码错误!</font>";
+								echo "<br><font color='red' size='3'>用户名或密码错误!</font>";
 							}
                             else if($err==2)
                             {
                                 echo "<br><font color='red' size='3'>验证码错误!</font>";
                             }
-						//}
 					}
+
+                    if(isset($_GET['name']))
+                    {
+                        $name=$_GET['name'];
+                        //退出销毁session数据
+                        destorySession();
+                    }
 				?>
                   </TD></TR>
                </FORM>
